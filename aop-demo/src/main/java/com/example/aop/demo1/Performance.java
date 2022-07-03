@@ -14,4 +14,8 @@ public class Performance {
     System.out.println("Performance.perform()");
     //throw new RuntimeException("test exception");
   }
+
+  public void perform(int count) {
+    System.out.println("Performance.perform( " + count + " )");
+  }
 }

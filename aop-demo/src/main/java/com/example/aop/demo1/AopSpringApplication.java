@@ -20,5 +20,6 @@ public class AopSpringApplication {
     ApplicationContext context = new AnnotationConfigApplicationContext(contextPackage);
     Performance bean = context.getBean(Performance.class);
     bean.perform();
+    bean.perform(2);
   }
 }

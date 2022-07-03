@@ -29,14 +29,13 @@ import org.springframework.stereotype.Component;
  */
 @Aspect
 @Component
-public class Audience {
+public class MyAspect {
 
   /**
    * 定义切点。空的方法体，方法其实只是一个标识，供 @Pointcut 依赖
    */
-  @Pointcut("execution( * com.example.aop.demo1.Performance.perform(..))")
+  @Pointcut("execution( * com.example.aop.demo1.Performance.perform())")
   public void pointcut() {
-
   }
 
   @Before("pointcut()")
@@ -75,6 +74,22 @@ public class Audience {
       System.out.println("Around after throw exception");
       throw new RuntimeException(e);
     }
+  }
+
+  /**
+   * 这里定义带有参数的切点
+   * <p/>
+   * TODO 切点的方法名不可以是重载的，会报错
+   *
+   * @param count
+   */
+  @Pointcut("execution( * com.example.aop.demo1.Performance.perform(int)) && args(count)")
+  public void pointcut2(int count) {
+  }
+
+  @Before("pointcut2(count)")
+  public void beforeWithParams(int count) {
+    System.out.println("before with count: " + count);
   }
 
 }
