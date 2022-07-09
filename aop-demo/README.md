@@ -29,4 +29,4 @@ AOP 基础应用
 
 ### demo2
 
-通过 `@DeclareParents` 如何给 bean 实现接口功能
+通过 `@DeclareParents` 如何给 bean 引入额外的接口实现
