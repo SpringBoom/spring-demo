@@ -32,10 +32,9 @@ public class BeanSpecialInstantiationDemo {
     System.out.println(serviceLoader);
     display(serviceLoader);
 
-
     // 3.使用 AutowireCapableBeanFactory
     AutowireCapableBeanFactory beanFactory = context.getAutowireCapableBeanFactory();
-    // 要使用具体的实现类
+    // 要使用具体实现类
     DefaultUserBeanImpl bean = beanFactory.createBean(DefaultUserBeanImpl.class);
     User user = bean.createUser();
     System.out.println(user);
