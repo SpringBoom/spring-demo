@@ -1,13 +1,20 @@
 package com.example.bdefinition;
 
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.support.GenericApplicationContext;
 
 import com.example.bdefinition.domain.User;
 
 /**
+ * BeanDefinitionRegistration 示例
+ * <p>1.通过 {@link BeanDefinitionBuilder} 创建 {@link BeanDefinition}
+ * <p>2.{@link BeanDefinitionRegistry} 注册 BeanDefinition 命名 beanName
+ * <p>3.{@link BeanDefinitionReaderUtils} 注册 BeanDefinition 内置命名 beanName
+ *
  * @author ChunLei
  * @date 2022/7/10
  */

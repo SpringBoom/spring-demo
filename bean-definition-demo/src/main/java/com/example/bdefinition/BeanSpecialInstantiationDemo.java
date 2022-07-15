@@ -12,6 +12,8 @@ import com.example.bdefinition.factory.DefaultUserBeanImpl;
 import com.example.bdefinition.factory.UserFactory;
 
 /**
+ * 特殊方式初始化 bean
+ *
  * @author ChunLei
  * @date 2022/7/9
  */
@@ -24,8 +26,7 @@ public class BeanSpecialInstantiationDemo {
         ServiceLoader.load(UserFactory.class, Thread.currentThread().getContextClassLoader());
     display(serviceLoader1);
 
-    ApplicationContext context =
-        new ClassPathXmlApplicationContext("META-INF/special-bean-instantiation-context.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/special-bean-instantiation-context.xml");
 
     // 2.Spring 使用 ServiceLoader
     ServiceLoader serviceLoader = context.getBean("userFactoryServiceLoader", ServiceLoader.class);
@@ -40,7 +41,7 @@ public class BeanSpecialInstantiationDemo {
     System.out.println(user);
   }
 
-  private static void display(ServiceLoader<UserFactory> serviceLoader){
+  private static void display(ServiceLoader<UserFactory> serviceLoader) {
     Iterator<UserFactory> iterator = serviceLoader.iterator();
     while (iterator.hasNext()) {
       UserFactory next = iterator.next();

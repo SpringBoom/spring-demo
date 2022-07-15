@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>untitled</artifactId>
+  <artifactId>aop-demo</artifactId>
   <packaging>jar</packaging>
 
   <name>aop-demo</name>
