@@ -10,6 +10,7 @@
   <modules>
     <module>aop-demo</module>
     <module>bean-definition-demo</module>
+    <module>mvc</module>
   </modules>
   <packaging>pom</packaging>
 
