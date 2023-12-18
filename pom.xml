@@ -17,6 +17,7 @@
     <module>bean-definition-demo</module>
     <module>mvc</module>
     <module>binary-jdbc</module>
+      <module>tx-demo</module>
   </modules>
   <packaging>pom</packaging>
 
