@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.stream.Collectors;
-
 @Service
 public class DemoService {
     public static final String SQL = "insert into t_demo (name, create_time, update_time) values(?, now(), now())";
@@ -25,5 +23,15 @@ public class DemoService {
         jdbcTemplate.update(SQL, "one");
     }
 
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void insertRecordRequiredNew(){
+        jdbcTemplate.update(SQL,"two");
+    }
+
+    @Transactional(propagation = Propagation.NESTED)
+    public void insertRecordNested(){
+        jdbcTemplate.update(SQL,"three");
+        throw new RuntimeException();
+    }
 
 }

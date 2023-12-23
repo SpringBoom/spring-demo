@@ -4,4 +4,4 @@ CREATE TABLE t_demo(
     create_time timestamp,
     update_time timestamp,
     primary key (id)
-)
+);
