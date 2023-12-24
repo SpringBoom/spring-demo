@@ -19,6 +19,7 @@
     <module>binary-jdbc</module>
     <module>tx-demo</module>
     <module>tx-demo-xml</module>
+    <module>tx-demo-txtemplate</module>
   </modules>
   <packaging>pom</packaging>
 

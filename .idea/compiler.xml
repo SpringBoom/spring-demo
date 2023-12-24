@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="tx-demo-txtemplate" />
         <module name="untitled" />
         <module name="aop-demo" />
         <module name="binary-jdbc" />
@@ -28,6 +29,7 @@
       <module name="mvc" options="-parameters" />
       <module name="spring-demo" options="-parameters" />
       <module name="tx-demo" options="-parameters" />
+      <module name="tx-demo-txtemplate" options="-parameters" />
       <module name="tx-demo-xml" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>
