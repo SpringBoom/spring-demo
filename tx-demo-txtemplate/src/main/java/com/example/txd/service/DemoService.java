@@ -18,13 +18,11 @@ public class DemoService {
     @Autowired
     private TransactionTemplate transactionTemplate;
 
-    @Transactional(readOnly = true)
     public String showNames() {
         return transactionTemplate.execute(status-> jdbcTemplate.queryForList("select name from t_demo",
                 String.class).stream().collect(Collectors.joining(",")));
     }
 
-    @Transactional(propagation = Propagation.REQUIRED)
     public void insertRecordRequired() {
         transactionTemplate.executeWithoutResult(status-> jdbcTemplate.update(SQL, "one"));
     }
