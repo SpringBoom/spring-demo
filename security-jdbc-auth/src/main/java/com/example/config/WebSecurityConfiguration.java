@@ -60,7 +60,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .passwordParameter("pwd")
         .and().httpBasic()
         .and().logout().logoutSuccessUrl("/login")
-        .logoutRequestMatcher(new OrRequestMatcher(new AntPathRequestMatcher("/logout", "GET"),
+        .logoutRequestMatcher(new OrRequestMatcher(
+            // Security 默认开启了 CSRF 防护，所以默认必须是 POST 请求
+            new AntPathRequestMatcher("/logout", "GET"),
             new AntPathRequestMatcher("/logout", "POST")));
 
   }
