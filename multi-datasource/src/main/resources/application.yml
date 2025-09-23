@@ -1,22 +1,21 @@
 spring:
-  datasource:
-    url:
   foo:
     datasource:
       url: jdbc:h2:mem:foo
       hikari:
         # 连接池最大连接数，默认10
-        maximum-pool-size: 10
+        # maximum-pool-size: 50
         # 连接池最小空闲连接数
-        minimum-idle: 10
+        # minimum-idle: 10
         # 连接清理前的空闲时间，单位毫秒
+        # idleTimeout: 1
         idle-timeout: 1
         # 连接池中连接最大存活时间，单位毫秒
         max-lifetime: 1
         # 连接测试查询，用于测试连接是否有效
         connection-test-query: SELECT 1
         # 建立连接的超时时间
-        # connection-timeout: 1
+        connection-timeout: 250
         pool-name: HikariCP-foo
   bar:
     datasource:
@@ -31,7 +30,11 @@ spring:
         # 连接池中连接最大存活时间，单位毫秒
         max-lifetime: 1
         # 连接测试查询，用于测试连接是否有效
-        connection-test-query: SELECT 1
+        # connection-test-query: SELECT 1
         # 建立连接的超时时间
         # connection-timeout: 1
         pool-name: HikariCP-bar
+
+logging:
+  level:
+    root: info
